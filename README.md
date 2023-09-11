@@ -46,6 +46,14 @@ This building block has the following ThingWorx extension/building block depende
 
 This building block has been tested with ThingWorx 9.3.6 and should be compatible with that version or higher.
 
+## SCP Accelertator (SCPA)
+Note that this building block was developed for use with SCPA.  This building block can be used outside of SCPA, but please note the following characteristics of SCPA building blocks.
+-	SCPA building blocks rely on the PTCTS.UserInterface building block and its master for a consistent look & feel and color scheme across the entire application.  If you are using this building block outside of SCPA, you may need to use a different master in your mashups to work with your application.
+-	SCPA building blocks rely on the PTCTS.IAMAdmin building block, which provides a default set of permissions for this building block.
+-	If you are using this building block outside of SCPA, some of the menuName values referenced in the manager MenuConfiguration table will likely not exist and will have to be changed.  Also note that SCPA provides additional menu functionality (such as menu icons) by overriding the MenuSectionKey in table MenuConfiguration.  If this value contains JSON, you may need to modify the value when used outside of SCPA. 
+-	SCPA building blocks create their localization tokens inside of the entry point DeployComponent service so you do no need to import a localization file.  
+-	Make sure to run DeployComponent from the entry point (or run InitializeSolution on the entire application) to perform required building block initialization.  
+
 ## Author
 | Peter Schmaltz | Digital Thread Advisory Services Fellow |
 
